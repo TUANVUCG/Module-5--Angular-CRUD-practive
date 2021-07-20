@@ -1,0 +1,21 @@
+<style routerLink="user-list.component.css"></style>
+<a routerLink="create">Create</a>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th colspan="2">Action</th>
+  </tr>
+  <tr *ngFor="let user of users; index as i">
+    <td>{{i+1}}</td>
+    <td><a routerLink="users/{{user.id}}">{{user.name}}</a></td>
+    <td>{{user.phoneNumber}}</td>
+    <td>{{user.address}}</td>
+    <td>{{user.email}}</td>
+    <td routerLink="users/edit/{{user.id}}">Edit</td>
+    <td (click)="deleteById(user.id)">Delete</td>
+  </tr>
+</table>

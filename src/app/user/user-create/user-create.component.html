@@ -1,0 +1,28 @@
+<h1>Form Create</h1>
+<a routerLink="">Back to user list</a>
+<form (ngSubmit)="createNewUser()">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" name="name" [(ngModel)]="user.name"></td>
+    </tr>
+    <tr>
+      <td>Phone number</td>
+      <td><input type="text" name="phoneNumber" [(ngModel)]="user.phoneNumber"></td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td><input type="text" name="address" [(ngModel)]="user.address"></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="email" [(ngModel)]="user.email"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>Create</button>
+      </td>
+    </tr>
+  </table>
+</form>
