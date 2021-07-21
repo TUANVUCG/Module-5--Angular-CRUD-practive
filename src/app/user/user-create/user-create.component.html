@@ -1,22 +1,42 @@
 <h1>Form Create</h1>
 <a routerLink="">Back to user list</a>
-<form (ngSubmit)="createNewUser()">
+<form #userForm="ngForm" (ngSubmit)="createNewUser(userForm)">
   <table>
     <tr>
       <td>Name</td>
-      <td><input type="text" name="name" [(ngModel)]="user.name"></td>
+      <td><input type="text" #name="ngModel" name="name" required minlength="4" [(ngModel)]="user.name"></td>
+      <td *ngIf="(userForm.invalid || userForm.touched) && isSubmitted">
+        <p *ngIf="name.errors?.required">Can not blank</p>
+        <p *ngIf="name.errors?.minlength">At least 4 characters</p>
+      </td>
     </tr>
     <tr>
       <td>Phone number</td>
-      <td><input type="text" name="phoneNumber" [(ngModel)]="user.phoneNumber"></td>
+      <td><input type="text" #phoneNumber="ngModel" required pattern="^[0-9]{10,11}$" name="phoneNumber"
+                 [(ngModel)]="user.phoneNumber"></td>
+      <td *ngIf="userForm.invalid && userForm.touched && isSubmitted">
+        <p *ngIf="phoneNumber.errors?.required">Can not blank</p>
+        <p *ngIf="phoneNumber.errors?.pattern">Invalid format</p>
+      </td>
     </tr>
     <tr>
       <td>Address</td>
-      <td><input type="text" name="address" [(ngModel)]="user.address"></td>
+      <td><input type="text" #address="ngModel" required minlength="4" maxlength="10" name="address"
+                 [(ngModel)]="user.address">
+      <td *ngIf="userForm.invalid && userForm.touched && isSubmitted">
+        <p *ngIf="address.errors?.required">Can not blank</p>
+        <p *ngIf="address.errors?.minlength">At least 4 character</p>
+        <p *ngIf="address.errors?.maxlength">At most 10 character</p>
+      </td>
     </tr>
     <tr>
       <td>Email</td>
-      <td><input type="text" name="email" [(ngModel)]="user.email"></td>
+      <td><input type="text" #email="ngModel" name="email" required
+                 pattern="^[a-z|0-9]{4,}@[a-z|0-9]{3,}.[a-z|0-9]{3,}$" [(ngModel)]="user.email"></td>
+      <td *ngIf="userForm.invalid && userForm.touched && isSubmitted">
+        <p *ngIf="email.errors?.required">Can not blank</p>
+        <p *ngIf="email.errors?.pattern">Invalid format</p>
+      </td>
     </tr>
     <tr>
       <td></td>

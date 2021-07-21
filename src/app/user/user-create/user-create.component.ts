@@ -10,6 +10,7 @@ import {User} from '../../model/user';
 })
 export class UserCreateComponent implements OnInit {
   user: User = {};
+  isSubmitted = false;
 
   constructor(private userService: UserService) {
   }
@@ -17,12 +18,15 @@ export class UserCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  createNewUser() {
-    return this.userService.save(this.user).subscribe(() => {
-        alert('Success');
-      },
-      () => {
-        alert('Fail');
-      });
+  createNewUser(userForm) {
+    this.isSubmitted = true;
+    if (userForm.valid) {
+      this.userService.save(this.user).subscribe(() => {
+          alert('Success');
+        },
+        () => {
+          alert('Fail');
+        });
+    }
   }
 }
