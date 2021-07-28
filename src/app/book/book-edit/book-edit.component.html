@@ -1,0 +1,25 @@
+
+<h1>Form Edit</h1>
+<a routerLink="">Back to book list</a>
+<form (ngSubmit)="editById(book.id)">
+  <table>
+    <tr>
+      <td>Title</td>
+      <td><input type="text" name="title" [(ngModel)]="book.title"></td>
+    </tr>
+    <tr>
+      <td>Author</td>
+      <td><input type="text" name="author" [(ngModel)]="book.author"></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input type="text" name="description" [(ngModel)]="book.description"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>Edit</button>
+      </td>
+    </tr>
+  </table>
+</form>

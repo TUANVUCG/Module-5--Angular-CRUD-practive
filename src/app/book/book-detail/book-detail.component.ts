@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../../user.service';
-import {User} from '../../model/user';
+import {BookService} from '../../book.service';
+import {Book} from '../../model/book';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  templateUrl: './book-detail.component.html',
+  styleUrls: ['./book-detail.component.css']
 })
-export class UserDetailComponent implements OnInit {
-  user: User = {};
+export class BookDetailComponent implements OnInit {
+  book: Book = {};
 
-  constructor(private userService: UserService,
+  constructor(private bookService: BookService,
               private activateRoute: ActivatedRoute) {
     this.activateRoute.paramMap.subscribe(paramMap => {
       const id = paramMap.get('id');
@@ -23,6 +23,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   findById(id) {
-    this.userService.findById(id).subscribe(user => this.user = user);
+    this.bookService.findById(id).subscribe(book => this.book = book);
   }
 }

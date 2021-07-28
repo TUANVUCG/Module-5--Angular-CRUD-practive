@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {UserListComponent} from './user/user-list/user-list.component';
-import {UserDetailComponent} from './user/user-detail/user-detail.component';
-import {UserCreateComponent} from './user/user-create/user-create.component';
-import {UserEditComponent} from './user/user-edit/user-edit.component';
+import {BookListComponent} from './book/book-list/book-list.component';
+import {BookDetailComponent} from './book/book-detail/book-detail.component';
+import {BookCreateComponent} from './book/book-create/book-create.component';
+import {BookEditComponent} from './book/book-edit/book-edit.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: UserListComponent,
+    component: BookListComponent,
   },
   {
-    path: 'users/:id',
-    component: UserDetailComponent,
+    path: 'detail/:id',
+    component: BookDetailComponent,
   },
   {
     path: 'create',
-    component: UserCreateComponent,
+    component: BookCreateComponent,
   },
   {
-    path: 'users/edit/:id',
-    component: UserEditComponent,
+    path: 'edit/:id',
+    component: BookEditComponent,
   }
 ];
 

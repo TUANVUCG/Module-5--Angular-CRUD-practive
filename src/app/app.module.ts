@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserListComponent } from './user/user-list/user-list.component';
+import { BookListComponent } from './book/book-list/book-list.component';
 import {HttpClientModule} from '@angular/common/http';
-import { UserCreateComponent } from './user/user-create/user-create.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { BookCreateComponent } from './book/book-create/book-create.component';
+import { BookDetailComponent } from './book/book-detail/book-detail.component';
+import { BookEditComponent } from './book/book-edit/book-edit.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
-    UserCreateComponent,
-    UserDetailComponent,
-    UserEditComponent
+    BookListComponent,
+    BookCreateComponent,
+    BookDetailComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,
