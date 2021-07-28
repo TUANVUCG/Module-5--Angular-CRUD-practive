@@ -18,15 +18,13 @@ export class BookCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  createNewBook(bookForm) {
+  createNewBook() {
     this.isSubmitted = true;
-    if (bookForm.valid) {
-      this.bookService.save(this.book).subscribe(() => {
-          alert('Success');
-        },
-        () => {
-          alert('Fail');
-        });
-    }
+    this.bookService.save(this.book).subscribe(() => {
+        alert('Success');
+      },
+      () => {
+        alert('Fail');
+      });
   }
 }

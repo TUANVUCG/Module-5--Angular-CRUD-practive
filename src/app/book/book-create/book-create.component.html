@@ -1,6 +1,6 @@
 <h1>Form Create</h1>
-<a routerLink="">Back to book list</a>
-<form #bookForm="ngForm" (ngSubmit)="createNewBook(bookForm)">
+<button routerLink="">Back to book list</button>
+<form (ngSubmit)="createNewBook()">
   <table>
     <tr>
       <td>Title</td>

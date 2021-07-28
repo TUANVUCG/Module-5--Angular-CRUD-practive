@@ -1,4 +1,4 @@
-<a routerLink="create">Create</a>
+<button routerLink="create">Add new book</button>
 <table>
   <tr>
     <th>#</th>
@@ -13,6 +13,6 @@
     <td>{{book.author}}</td>
     <td>{{book.description}}</td>
     <td routerLink="edit/{{book.id}}">Edit</td>
-    <td (click)="deleteById(book.id)">Delete</td>
+    <td routerLink="delete/{{book.id}}">Delete</td>
   </tr>
 </table>

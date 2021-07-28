@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <td>Title</td>
+    <td>{{book.title}}</td>
+  </tr>
+  <tr>
+    <td>Author</td>
+    <td>{{book.author}}</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>{{book.description}}</td>
+  </tr>
+  <tr>
+    <td><button (click)="deleteById(book.id)" routerLink="">Delete</button></td>
+    <td><button routerLink="">Cancel</button></td>
+  </tr>
+</table>

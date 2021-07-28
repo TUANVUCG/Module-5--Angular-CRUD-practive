@@ -19,22 +19,12 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAllUser();
+    this.getAll();
   }
 
-  getAllUser() {
+  getAll() {
     return this.bookService.getAll().subscribe(books => {
       this.books = books;
     });
-  }
-
-  deleteById(id) {
-    this.bookService.delete(id).subscribe(() => {
-        this.getAllUser();
-        alert('Success');
-      },
-      () => {
-        alert('Fail');
-      });
   }
 }
